@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+:root {
+  --blue: #030b6b;
+  --grey: #eee;
+  --white: #fff;
+  --red: red;
+  --green: green;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--grey);
+  color: var(--blue);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo,
+.logo a {
+  cursor: default;
+}
+
+.--rowFlex-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 1rem;
+  align-items: center;
+}
+.--btn {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+}
+.--btn-primary {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.--btn-danger {
+  color: var(--white);
+  background-color: var(--red);
+}
+
+.blueText {
+  color: var(--blue);
+}
+
+.--mt1 {
+  margin-top: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+.react-confirm-alert-body,
+.react-confirm-alert-button-group > button,
+.Toastify__toast-body {
+  font-family: "Inter", sans-serif !important;
+}
+
+/* Styles for Toastify and React-Confirm-Alert*/
+
+@media screen and (max-width: 768px) {
+  .Toastify__toast-body {
+    font-size: 1.7rem !important;
+  }
+  .react-confirm-alert-body {
+    font-size: 1.7rem !important;
+    width: 100% !important;
+  }
+  .react-confirm-alert-body > h1 {
+    font-size: 2rem !important;
+  }
+  .react-confirm-alert-body > h3 {
+    font-size: 2rem !important;
+  }
+  .react-confirm-alert-button-group > button {
+    font-size: 2rem !important;
+  }
+}
+
