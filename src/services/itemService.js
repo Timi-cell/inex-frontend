@@ -1,29 +1,29 @@
 import axios from "axios";
 
-// const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 // Add Item
 const addItem = async (itemData) => {
-  const response = await axios.post(`/api/items/add`, itemData);
+  const response = await axios.post(`${BACKEND_URL}/api/items/add`, itemData);
   return response.data;
 };
 
 // Get All Items
 const getItems = async () => {
-  const response = await axios.get(`/api/items`);
+  const response = await axios.get(`${BACKEND_URL}/api/items`);
   return response.data;
 };
 
 // Delete Items
 const deleteItem = async (id) => {
-  const response = await axios.delete(`/api/items/${id}`);
+  const response = await axios.delete(`${BACKEND_URL}/api/items/${id}`);
   return response.data;
 };
 
 // Update Item
 const updateItem = async (itemData) => {
   const response = await axios.patch(
-    `/api/items/update`,
+    `${BACKEND_URL}/api/items/update`,
     itemData
   );
   return response.data;
