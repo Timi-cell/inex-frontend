@@ -15,22 +15,34 @@ export const registerUser = async (userData) => {
   try {
     const response = await axios.post(
       `${BACKEND_URL}/api/users/register`,
-      userData
+      userData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
-    if (response.statusText === "Created") {
-      toast.success("Registeration Successful!", {
+
+    if (response.status === 201) {
+      // 201 = Created
+      toast.success("Registration Successful!", {
         position: toast.POSITION.TOP_LEFT,
       });
     }
+
     return response.data;
   } catch (error) {
+    // Detailed error handling
     const message =
-      (error.response && error.response.data && error.response.data.message) ||
+      error.response?.data?.message ||
       error.message ||
-      error.toString();
+      "Something went wrong. Please try again.";
+
     toast.error(message, {
       position: toast.POSITION.TOP_LEFT,
     });
+
+    console.error("Register User Error:", error); // for debugging
   }
 };
 
