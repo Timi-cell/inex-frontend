@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Register from "./pages/auth/Register";
@@ -17,7 +16,6 @@ import { useDispatch } from "react-redux";
 import { SET_LOGIN } from "./redux/features/auth/authSlice";
 import { getLoginStatus } from "./services/authService";
 import EditProfile from "./pages/profile/EditProfile";
-axios.defaults.withCredentials = true;
 
 const App = () => {
   const dispatch = useDispatch();
