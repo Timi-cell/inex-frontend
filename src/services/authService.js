@@ -15,13 +15,7 @@ export const registerUser = async (userData) => {
   try {
     const response = await axios.post(
       `${BACKEND_URL}/api/users/register`,
-      userData,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      }
+      userData
     );
 
     if (response.status === 201) {
