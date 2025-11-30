@@ -22,7 +22,7 @@ const Header = () => {
         </ShowOnLogOut>
         <ShowOnLogIn>
           <li className="link blue-link">
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/dashboard">My Dashboard</Link>
           </li>
         </ShowOnLogIn>
       </ul>

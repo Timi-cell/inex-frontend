@@ -249,7 +249,7 @@ const Dashboard = () => {
     <div className="dash">
       <div className="top">
         <h2>
-          Welcome, <span id="name">{name}</span>
+          Welcome, <span id="name">{name}.</span>
         </h2>
         {/* Pick a currency dropdown list*/}
         <select

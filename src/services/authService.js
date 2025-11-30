@@ -48,7 +48,7 @@ export const loginUser = async (userData) => {
       `${BACKEND_URL}/api/users/login`,
       userData
     );
-    if (response.statusText === "OK") {
+    if (response.status === 200) {
       toast.success("Login Successful!", {
         position: toast.POSITION.TOP_LEFT,
       });
@@ -69,7 +69,7 @@ export const loginUser = async (userData) => {
 export const logOutUser = async () => {
   try {
     const response = await axios.get(`${BACKEND_URL}/api/users/logout`);
-    if (response.statusText === "OK") {
+    if (response.status === 200) {
       toast.success("Logout Successful!", {
         position: toast.POSITION.TOP_LEFT,
       });
@@ -88,9 +88,7 @@ export const logOutUser = async () => {
 // Get Login Status
 export const getLoginStatus = async () => {
   try {
-    const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`, {
-      withCredentials: true,
-    });
+    const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`);
     return response.data;
   } catch (error) {
     const message =
